@@ -22,7 +22,7 @@
 
 # eslint
 
-`yarn add eslint` - add eslint
+`npm init @eslint/config` - install eslint
 
 
 # mui
