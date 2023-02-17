@@ -20,5 +20,8 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "singleQuote": true,
+        "endOfLine": "auto",
+        "semi": 0
     }
 }
