@@ -14,7 +14,7 @@
 
 `yarn add @storybook/react` - add storybook
 
-`yarn storybook init`  - init storybook
+`yarn / npx storybook init`  - init storybook
 
 `yarn install` - every time when we add new packages
 
