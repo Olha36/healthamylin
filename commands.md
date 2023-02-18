@@ -22,8 +22,11 @@
 
 # eslint
 
-`yarn add eslint` - add eslint
+`npm init @eslint/config` - install eslint
+`yarn add eslint-config-airbnb-base` - add airbnb
 
+# prettier 
+`yarn add --dev --exact prettier` - install prettier
 
 # mui
 `yarn add @mui/material @mui/styled-engine-sc styled-components` - add mui components
