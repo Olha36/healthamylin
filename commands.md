@@ -27,6 +27,7 @@
 
 # prettier 
 `yarn add --dev --exact prettier` - install prettier
+`yarn add eslint-plugin-prettier --dev` - installs the eslint-plugin-prettier package as a development dependency in a Node.js project
 
 # mui
 `yarn add @mui/material @mui/styled-engine-sc styled-components` - add mui components
