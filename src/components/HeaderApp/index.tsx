@@ -11,10 +11,20 @@ import Avatar from '@mui/material/Avatar'
 import Button from '@mui/material/Button'
 import Tooltip from '@mui/material/Tooltip'
 import MenuItem from '@mui/material/MenuItem'
-import logo from './../HeaderApp'
+import logo from './logo.jpg'
 
 const pages = ['Products', 'Pricing', 'Blog']
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout']
+
+export type LogoProps = {
+  alt?: string
+  src: string
+}
+
+function Logo(props: LogoProps) {
+  const { alt, src } = props
+  return <img alt={alt} src={src} />
+}
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null)
@@ -39,7 +49,7 @@ function ResponsiveAppBar() {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Logo sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <Logo src={logo} alt="Logo" />
           <Typography
             variant="h6"
             noWrap
@@ -94,7 +104,7 @@ function ResponsiveAppBar() {
               ))}
             </Menu>
           </Box>
-          <Logo sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          {/* <Logo src={logo} alt="Logo" /> */}
           <Typography
             variant="h5"
             noWrap
