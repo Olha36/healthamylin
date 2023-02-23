@@ -13,18 +13,13 @@
   ],
   "overrides": [
     {
-      "files": [
-        "**/*.stories.*"
-      ],
+      "files": ["**/*.stories.*"],
       "rules": {
         "import/no-anonymous-default-export": "off",
         "import/no-extraneous-dependencies": [
           "error",
           {
-            "devDependencies": [
-              "**/*.stories.*",
-              "**/.storybook/**/*.*"
-            ],
+            "devDependencies": ["**/*.stories.*", "**/.storybook/**/*.*"],
             "peerDependencies": true
           }
         ]
@@ -39,12 +34,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": [
-    "@typescript-eslint",
-    "jest",
-    "prettier",
-    "react"
-  ],
+  "plugins": ["@typescript-eslint", "jest", "prettier", "react"],
   "root": true,
   "rules": {
     "@typescript-eslint/ban-ts-comment": 0,
@@ -77,17 +67,9 @@
     "react/jsx-filename-extension": [
       2,
       {
-        "extensions": [
-          ".js",
-          ".jsx",
-          ".ts",
-          ".tsx"
-        ]
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
     ],
-    "semi": [
-      2,
-      "never"
-    ]
+    "semi": [2, "never"]
   }
 }

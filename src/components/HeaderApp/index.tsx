@@ -11,19 +11,22 @@ import Avatar from '@mui/material/Avatar'
 import Button from '@mui/material/Button'
 import Tooltip from '@mui/material/Tooltip'
 import MenuItem from '@mui/material/MenuItem'
-import logo from './logo.jpg'
+import type { Theme } from '@emotion/react'
+import type { SxProps } from '@mui/system'
+import logo from './logo.png'
 
-const pages = ['Products', 'Pricing', 'Blog']
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout']
+const pages = ['Про програму', 'EN / UK', 'Клініки']
+const settings = ['Профіль', 'Акаунт', 'Вийти']
 
 export type LogoProps = {
   alt?: string
   src: string
+  sx?: SxProps<Theme> | undefined
 }
 
 function Logo(props: LogoProps) {
   const { alt, src } = props
-  return <img alt={alt} src={src} />
+  return <img alt={alt} src={src} style={{ width: '40px', height: '40px' }} />
 }
 
 function ResponsiveAppBar() {
@@ -49,7 +52,7 @@ function ResponsiveAppBar() {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Logo src={logo} alt="Logo" />
+          <Logo sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} src={logo} alt="Logo" />
           <Typography
             variant="h6"
             noWrap
@@ -57,6 +60,7 @@ function ResponsiveAppBar() {
             href="/"
             sx={{
               mr: 2,
+              ml: 1,
               display: { xs: 'none', md: 'flex' },
               fontFamily: 'monospace',
               fontWeight: 700,
@@ -65,7 +69,7 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            HEALTHAMYLIN
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -104,26 +108,10 @@ function ResponsiveAppBar() {
               ))}
             </Menu>
           </Box>
-          {/* <Logo src={logo} alt="Logo" /> */}
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
+
+          <Box
+            sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center', alignItems: 'center' }}
           >
-            LOGO
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button key={page} onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}>
                 {page}
