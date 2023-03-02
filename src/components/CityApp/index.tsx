@@ -1,5 +1,17 @@
 import type { ChangeEvent } from 'react'
 import React, { useState } from 'react'
+import location from './location.png'
+import './index.css'
+
+export type LogoProps = {
+  alt?: string
+  src: string
+}
+
+function Location(props: LogoProps) {
+  const { alt, src } = props
+  return <img alt={alt} src={src} className="location" />
+}
 
 function UkrainianCities() {
   const [selectedCity, setSelectedCity] = useState('')
@@ -16,8 +28,8 @@ function UkrainianCities() {
   const cityOptions = ['Київ', 'Житомир', 'Львів', 'Одеса', 'Вінниця', 'Луцьк', 'Рівне', 'Other']
 
   return (
-    <div>
-      <label htmlFor="citySelect">Виберіть своє місто:</label>
+    <div className="city">
+      <Location src={location} alt="location" />
       <select id="citySelect" onChange={handleCityChange}>
         <option value="">Виберіть своє місто:</option>
         {cityOptions.map((city) => (
@@ -27,12 +39,11 @@ function UkrainianCities() {
         ))}
       </select>
       {selectedCity === 'Other' && (
-        <div>
+        <div className="other-city">
           <label htmlFor="otherCity">Enter your city:</label>
           <input type="text" id="otherCity" onChange={handleOtherCityChange} value={otherCity} />
         </div>
       )}
-      {selectedCity && selectedCity !== 'Other' && <p>You selected {selectedCity}.</p>}
     </div>
   )
 }
