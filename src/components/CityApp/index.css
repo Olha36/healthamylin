@@ -1,0 +1,14 @@
+.city {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+.location {
+    width: 19px;
+    height: 19px;
+    margin-right: 5px;
+}
+.other-city {
+    margin-left: 10px;
+}
